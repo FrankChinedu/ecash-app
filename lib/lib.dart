@@ -65,6 +65,10 @@ Future<void> rejoinFromBackupInvites() =>
 Future<List<(FederationSelector, bool)>> federations() =>
     RustLib.instance.api.crateFederations();
 
+/// One invite code per joined federation, for the user to view and export.
+Future<List<(FederationSelector, String)>> federationInviteCodes() =>
+    RustLib.instance.api.crateFederationInviteCodes();
+
 Future<void> refreshConnections() =>
     RustLib.instance.api.crateRefreshConnections();
 
